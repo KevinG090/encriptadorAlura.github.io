@@ -85,7 +85,7 @@ const cambioPantalla = (texto) => {
     texto="";
 }
 const cambioEstilos = () => {
-    output.rows="14"
+    output.rows="10"
     botonCopiar.style.display="block"
     containerOutput.style.justifyContent="normal"
     divOutput.style.width="100%"
@@ -117,7 +117,7 @@ const verificar=(i)=> {
     if (i.charCodeAt()>96&&i.charCodeAt()<123||i.charCodeAt()==46||i.charCodeAt()==10||i.charCodeAt()==32||i.charCodeAt()==44||i.charCodeAt()>47&&i.charCodeAt()<58) {
         return true;
     }
-    alert("No usar: tildes, mayúsculas, caracteres especiales");
+    alert("No usar: tildes ni caracteres especiales");
     return false;
     
 }

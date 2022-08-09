@@ -199,12 +199,20 @@ main{
     .output{
         width: 80%;
     }
-    .container-input ,  .container-output {
-        width: 100%;
+    .container-input , .container-output {
+        width: 90%;
+        margin: auto;
+    }
+    .container-output{
+        margin-bottom: 20px;
     }
     .container-output p{
         width: 80%;
         position: relative;
         top: -40px;
     }  
+    #copiar{
+        width: 60%;
+        margin: auto auto 10px auto;
+    }
 }  
