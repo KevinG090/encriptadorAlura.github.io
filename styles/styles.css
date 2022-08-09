@@ -150,6 +150,61 @@ main{
 }
 
 /* ---- TABLET ---- */
-@media screen and (max-width:784px) {
+@media screen and (max-width:917px) {
+    main{
+        margin:100px 50px 0 50px ;
+    }
+    .output{
+        width: 90%;
+    }
+    .container-output p{
+        width: 80%;
+    }
     
-}
+}   
+@media screen and (max-width:700px) {
+    #logo{
+        width: 100px;
+        top: 10px;
+        left: -20px;
+    }
+    main{
+        margin:70px 10px 0 10px ;
+    }
+    .text , .text::placeholder{
+        font-size:22px; 
+    }
+    .input{
+        margin: 10px auto 80px 10px;
+    }
+    .output{
+        width: 80%;
+    }
+    .container-input{
+        width: 70%;
+    }
+    .container-output p{
+        width: 80%;
+    }  
+}   
+
+/* ---- CELULAR ---- */
+@media screen and (max-width:550px) {
+    main{
+        flex-wrap: wrap;
+    }
+    .input{
+        margin: 10px auto 80px 10px;
+    }
+    .output{
+        width: 80%;
+    }
+    .container-input ,  .container-output {
+        width: 100%;
+    }
+    .container-output p{
+        width: 80%;
+        position: relative;
+        top: -40px;
+    }  
+}  

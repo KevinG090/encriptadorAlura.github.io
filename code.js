@@ -11,7 +11,7 @@ const textoOutput = document.querySelector("#texto-output");
 const containerOutput = document.querySelector(".container-output")
 const divOutput = document.querySelector("#espacio-output");
 
-
+// output.style.rows="4"
 const encriptar = () => {
     /* ---- OPCION 1 (for y switch) ----
     let texto = "";
@@ -76,6 +76,7 @@ const desencriptar = () => {
         .replace(/ai/gi,"a") // debe estar aqui esta funcion
         .replace(/ober/gi, "o")
         .replace(/ufat/gi, "u");
+    
     cambioPantalla( texto);    
 }
 const cambioPantalla = (texto) => {
@@ -95,18 +96,57 @@ const copiar = () => {
     output.select();
     document.execCommand('copy');
 }
-botonEncritptar.addEventListener("click",()=>{
-    if (input.value != ""){
-        encriptar();
+const codificar = (accion)=>{
+    if (input.value == "" ){
+        alert("para encriptar necesita que escribas algo")
+    }else {
+        for (let i = 0; i < input.value.length; i++) {
+            if (verificar(input.value.substring(i, i + 1))==false){
+                output.value="El texto no se encuentra escrito correctamente"
+                break
+            }
+            else{
+                accion();  
+            }
+        }
     }
+}
+const verificar=(i)=> {
+    i=i.toLowerCase()
+    // verifica los caracteres uno por uno
+    if (i.charCodeAt()>96&&i.charCodeAt()<123||i.charCodeAt()==46||i.charCodeAt()==10||i.charCodeAt()==32||i.charCodeAt()==44||i.charCodeAt()>47&&i.charCodeAt()<58) {
+        return true;
+    }
+    alert("No usar: tildes, mayúsculas, caracteres especiales");
+    return false;
+    
+}
+// const verificar = (e) => {
+//     key= e.keyCode || e.which;
+//     tecla = String.fromCharCode(key).toString();
+//     letras=" abcdefghijklmnopqrstuvwxyz"
+//     especiales= "8-37-38-46-164";
+//     tecla_especial=true;
+//     for (var i in especiales){
+//         if (key==especiales[i]){
+//             tecla_especial = false;
+//             break;
+//         }
+//     }
+//     if(letras.indexOf(tecla)== -1 && !tecla_especial){
+//         return false;
+//     }
+//     return tecla_especial
+// }
+botonEncritptar.addEventListener("click",()=>{
+    codificar(encriptar)
 })
 botonDesencritptar.addEventListener("click",()=>{
-    if (input.value != ""){
-        desencriptar();
-    }
+    codificar(desencriptar)
 })
 botonCopiar.addEventListener("click",()=>{
     if (output.value != ""){
         copiar();
     }
 })
+
