@@ -1,0 +1,155 @@
+:root{
+    --main-color:#E5E5E5;
+    --white-color:#FFFFFF;
+    --light-blue:#D8DFE8;
+    --dark-blue:#0A3871;
+    --gray-color:#495057;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: var(--main-color);
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.text{
+    padding: 0.7rem ;
+    font-size:25px;
+    font-family: 'Inter';
+    font-style: normal;
+    background: var(--main-color);
+    color: var(--dark-blue);
+    border: none;
+    /* overflow: scroll; */
+    resize: none;
+}
+.text::placeholder{
+    color: var(--dark-blue);
+    font-size:25px;
+    font-family: 'Inter';
+    font-style: normal;
+    
+}
+.text:focus{
+    border: none;
+    outline: none
+}
+
+/*--- LOGO --- */
+header{
+    position: relative;
+}
+#logo{
+    position: fixed;
+    top: 20px;
+    left: -10px;
+}
+
+/*--- Input --- */
+main{
+    display: flex;
+    /* justify-content: space-between; */
+    margin:100px 50px 0 100px ;
+}
+.container-input{
+    width: 60%;
+    /* height: 500px; */
+    margin-right:40px ;
+    /* background: var(--gray-color); */
+    flex-direction: column;
+}
+.input{
+    width: 90%;
+    margin: 10px auto 100px 10px;
+}
+
+/*Sugerencia*/
+#container-sugerencia{
+    display: flex;
+    margin:auto 10px;
+}
+#exclamacion{
+    width: 15px;
+    height: 15px;
+    margin: auto 0 auto 10px ;
+}
+#sugerencia{
+    margin:auto 10px;
+}
+/*Botones*/
+#container-buttons{
+    width: 100%;
+    display: flex;
+    margin-top:20px
+}
+#container-buttons input{
+    width: 50%;
+    margin: 0 20px 40px 20px;
+    padding: 0.7rem ;
+    border: 1px solid var(--dark-blue);
+    border-radius: 15px;
+    cursor: pointer;
+}
+#Encriptar{
+    background: var(--dark-blue);
+    color: var(--main-color);
+}
+#Desencriptar{
+    background: var(--light-blue);
+}
+
+/*--- Output --- */
+.container-output{
+    width: 40%;
+    /* padding-bottom: 1rem; */
+    background: var(--white-color);
+    border-radius: 15px;
+    flex-direction: column;
+    flex-wrap:wrap ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#imagen-muñeco{
+    margin-top: auto;
+    width: 50%;
+}
+.output{
+    width: 80%;
+    padding-bottom: 0;
+    color: var(--gray-color);
+    background: var(--white-color);
+    text-align: center;
+}
+.output::placeholder{
+    color: var(--gray-color);
+    font-weight: 700;
+}
+.container-output p{
+    width: 50%;
+    margin: auto;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-style: normal;
+    color: var(--gray-color);
+}
+#copiar{
+    width: 60%;
+    display: none;
+    margin: auto auto 40px auto;
+    padding: 0.7rem ;
+    border: 1px solid var(--dark-blue);
+    border-radius: 15px;
+    cursor: pointer;
+    background: var(--white-color);
+    color: var(--dark-blue);
+}
+
+/* ---- TABLET ---- */
+@media screen and (max-width:784px) {
+    
+}
